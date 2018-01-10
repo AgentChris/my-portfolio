@@ -1,9 +1,9 @@
 import React from 'react';
 
-const MessageComponent = ({ text }) => (
-  <div>
+const MessageComponent = ({ text, hero }) => (
+  <li className={"message " + (hero ? "hero" : "")}>
     <p>{text}</p>
-  </div>
+  </li>
 );
 
 export default MessageComponent;
