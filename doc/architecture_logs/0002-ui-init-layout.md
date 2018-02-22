@@ -13,7 +13,10 @@ We need this core values:
 * refresh
 * original
 
-[core_values]: ../img/core_values.jpg
+![core_values architecture][core_values]
+
+[core_values]: img/core_values.jpg
+
 ## Decision
 
 We need a clasical and a chat app aproace, 3 main section: 
@@ -23,4 +26,6 @@ We need a clasical and a chat app aproace, 3 main section:
 * history 
 
 ## Consequences
-[basic_layout]: ../img/basic_layout.jpg
+![basic_layout architecture][basic_layout]
+
+[basic_layout]: img/basic_layout.jpg
