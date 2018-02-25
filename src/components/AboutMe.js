@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.css';
 
 const AboutMe = ({}) => (
   <div>
-    <h1>Chris</h1>
+    <div className="image-me"/>
     <p>Well nothing much to say....</p>
   </div>
 );
