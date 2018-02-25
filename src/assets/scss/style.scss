@@ -1,18 +1,125 @@
 // Custom code
 @import "variabiles";
-
 // bootstrap style:
 // Required
+//@import "../../../node_modules/bootstrap/scss/bootstrap";
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/utilities";
 // Optional
 @import "../../../node_modules/bootstrap/scss/reboot";
 @import "../../../node_modules/bootstrap/scss/type";
-@import "../../../node_modules/bootstrap/scss/images";
-@import "../../../node_modules/bootstrap/scss/code";
+//@import "../../../node_modules/bootstrap/scss/images";
+//@import "../../../node_modules/bootstrap/scss/code";
 @import "../../../node_modules/bootstrap/scss/grid";
-@import "../../../node_modules/bootstrap/scss/buttons";
+//@import "../../../node_modules/bootstrap/scss/buttons";
 
+@import "message";
 
+#root{
+  background: #fff;
+}
 
+.image-me {
+  background-image: url('../../assets/img/about_me.jpg');
+  background-size: cover;
+  width: 350px;
+  height: 350px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 50%;
+}
+
+@include media-breakpoint-down(xs) {
+  .image-me {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+
+@include media-breakpoint-between(md, lg) {
+  .image-me {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .image-me {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.ng-icon-ngs:before {
+  border: solid #fc0 3px;
+  color: #fff;
+  content: "a";
+}
+
+.icon-size {
+  width: 28px;
+  height: 26px;
+}
+
+.stacks{
+  max-width: 450px;
+}
+
+.icon-size:hover {
+  animation: rotation 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.qc-icon{
+  display: inline-block;
+  width: 125px;
+  height: 24px;
+  background: url('../img/qc.jpg');
+  background-size: cover;
+}
+
+.react-icon {
+  width: 45px;
+  height: 30px;
+  margin-left: -11px;
+  background: url('../img/react.png');
+  background-size: cover;
+}
+.python-icon {
+  background: url('../img/python.png');
+  background-size: cover;
+}
+.django-icon {
+  width: 100px;
+  height: 29px;
+  background: url('../img/django.png');
+  background-size: cover;
+}
+.typescript-icon {
+  background: url('../img/typescript.png');
+  background-size: cover;
+}
+.js-icon {
+  background: url('../img/js.jpg');
+  background-size: cover;
+}
+
+.redux-icon {
+  background: url('../img/redux.png');
+  background-size: cover;
+}
+
+.about-me {
+  border: solid $anti-flash-white-color 2px;
+  padding: 15px 0 15px 0;
+}

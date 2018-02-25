@@ -11,13 +11,11 @@ const messages = [
 ];
 
 const Chat = ({}) => (
-  <div>
-    <ul className="message-list">
-      {messages.map((message) => (
-        <Message {...message} />
-      ))}
-    </ul>
-  </div>
+  <ul className="d-flex flex-column p-0">
+    {messages.map((message) => (
+      <Message {...message} />
+    ))}
+  </ul>
 );
 
 export default Chat;

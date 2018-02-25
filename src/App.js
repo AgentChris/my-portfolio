@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Layout from './components/Layout';
 import Chat from './components/Chat';
-import AboutMe from './components/AboutMe';
+import AboutMe from './components/about-me';
 import Projects from './components/Projects';
 import Articles from './components/Articles';
 import Contact from './components/Contact';
@@ -10,13 +11,13 @@ import "./assets/scss/style.css";
 
 class App extends Component {
   render() {
-    return (<div>
+    return (<Layout>
       <Chat />
       <AboutMe />
       <Projects />
       <Articles />
       <Contact />
-    </div>);
+    </Layout>);
   }
 }
 

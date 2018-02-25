@@ -1,0 +1,33 @@
+@import "variabiles";
+
+.message-list {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+}
+
+.message {
+  align-self: flex-start;
+  display: inline-block;
+  padding: .8em .8em 0 .8em;
+  background: $isabelline-color;
+  animation: fade-in 1s;
+  margin: 1em;
+  border-radius: 1em;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+
+.hero {
+  align-self: flex-end;
+  float: left;
+  color: #fff;
+  background-color: $primary;
+}
