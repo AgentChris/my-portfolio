@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Articles from './components/Articles';
 import Contact from './components/Contact';
 
+import "./assets/scss/style.css";
 
 class App extends Component {
   render() {
