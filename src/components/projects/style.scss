@@ -1,16 +1,30 @@
-.project-wrapper{
+.project-wrapper {
   display: flex;
   min-height: 100px;
   justify-content: center;
   align-items: center;
 }
-.project-wrapper:hover{
-  background: #000;
+
+.project-link, .project-link:hover {
+  text-decoration: none;
+}
+
+.project-link:hover{
   color: #fff;
 }
+
+.project-wrapper:hover {
+  background: #000;
+  color: #fff;
+  .project-link{
+    color: #fff;
+  }
+}
+
 .project-0 {
   background: cadetblue;
 }
+
 .project-1 {
   background: #a3ffc7;
 }

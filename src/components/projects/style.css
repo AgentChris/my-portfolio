@@ -4,9 +4,17 @@
   justify-content: center;
   align-items: center; }
 
+.project-link, .project-link:hover {
+  text-decoration: none; }
+
+.project-link:hover {
+  color: #fff; }
+
 .project-wrapper:hover {
   background: #000;
   color: #fff; }
+  .project-wrapper:hover .project-link {
+    color: #fff; }
 
 .project-0 {
   background: cadetblue; }

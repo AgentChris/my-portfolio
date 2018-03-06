@@ -2,7 +2,7 @@ export const projects = [{
   id: '1',
   name: 'People like me',
   url: 'http://www.people-like-me.co/',
-  description: "A short description",
+  description: "Wise ways for finding accommodation for a cancer relative.",
   img_src: "www.imgur.com/1",
 }, {
   id: '2',
