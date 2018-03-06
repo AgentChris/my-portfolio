@@ -3,7 +3,7 @@ import './App.css';
 import Layout from './components/Layout';
 import Chat from './components/Chat';
 import AboutMe from './components/about-me';
-import Projects from './components/Projects';
+import Projects from './components/projects';
 import Articles from './components/Articles';
 import Contact from './components/Contact';
 
