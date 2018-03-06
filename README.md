@@ -1,4 +1,4 @@
-For project demo: [Portofolio](http://www.people-like-me.co).
+For project demo: [Portofolio](https://agentchris.github.io/my-portfolio/).
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
