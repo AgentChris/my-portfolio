@@ -19,6 +19,6 @@ The chat bot should be able to talk about my field of expertise, like article on
 Build these ui interaction dialogs (flows):
 - [ ] The intro flow (like hello, multiple versions)
 - [ ] Ask about their field of expertise and if they have some question, I can recommend some articles that i've find meaningfully or i've wrote (the proffered way)
-- [ ] Ask about personal development subjects like books, personalities videos that inspire you, other hobbies like skying, league of legends, beautiful ui interface and art
+- [ ] Ask about personal development subjects like books, anime, tarzan charcther,tv series(picky blinder, khalisey and whatever) personalities videos that inspire you, other hobbies like skying, league of legends, beautiful ui interface and art
 
 
