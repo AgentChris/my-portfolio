@@ -7,10 +7,8 @@ const AboutMe = ({}) => (
     </div>
     <div className="col-sm-12 col-md-8 mt-4 mt-md-0">
       <div className="font-italic">
-        Embarked on an adventure that supports people in achieving their dreams, which consists
-        in either building great apps or helping them become better fullstack software developers.
-        Programmer since 2009 (good old days) I am software developer passionate about building complete and
-        comprehensive application.
+        Embarked on an adventure in 2009 (good old days) that supports people in achieving their dreams, which consists
+        in either building comprehensive apps or helping them become better fullstack software developers.
       </div>
       <div className="mt-4">
         <div className="d-block d-sm-none">Currently working at:</div>

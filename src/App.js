@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Layout from './components/Layout';
-import Chat from './components/Chat';
+import Chat from './components/chat';
 import AboutMe from './components/about-me';
 import Projects from './components/projects';
 import Articles from './components/Articles';
