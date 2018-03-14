@@ -5,10 +5,15 @@
   "homepage": "https://agentchris.github.io/my-portfolio",
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "history": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.17",
-    "reactstrap": "^5.0.0-beta"
+    "reactstrap": "^5.0.0-beta",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -19,6 +24,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^1.1.0",
+    "redux-devtools-extension": "^2.13.2"
   }
 }

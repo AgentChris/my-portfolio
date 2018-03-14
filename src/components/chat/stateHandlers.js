@@ -1,0 +1,119 @@
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { validateEmail } from '../../utils';
+import { askAction, emitAction, quitChatAction, tellAction, } from "../../store/";
+// the alexa way
+
+export const greetingStateHandler = {
+  "Greet.Intent": () => {
+    this.tell({ text: "I am Chris, web developer, based in the land of vampires Transilvania (in Cluj) [:spookey emoji]\n" })
+    this.tell({ text: "Wanna simply get in Touch or Are You curios to find more?" });
+
+    this.ask([{ text: "Tell me more", state: "greetingState", intent: "TellMeMore.Intent" },
+      { text: "Get in Thouch", state: "getInTouchState", intent: "GetInTouch.Intent" }]);
+  },
+  "TellMeMore.Intent": () => {
+    this.tell({ text: "Great, Well were should i start :thinkingface" });
+    this.tell({
+      text: "I am over enthusiastic programmer, lucky enough to\n" +
+      "work a great team in Transylvania for National Geographic"
+    });
+
+    this.ask([{
+      text: "What do you guys do more specifically for Nat" +
+      "geo"
+    }], { intent: "MoreDetail.Intent" });
+  },
+  "MoreDetail.Intent": () => {
+    this.tell({
+      text: "We are building all kinds off product using the technologies like three.js, react, uikit, actually\n" +
+      "we just released a tapeline website were you can see NatGeo history (link de la timeline)\n"
+    });
+    this.ask([{
+      text: " Hmm interesting, I am curios to see what did you do for them?",
+      state: "getInTouchState",
+      intent: "GetInTouch.Intent"
+    }]);
+  }
+};
+
+export const getInTouchState = {
+  "GetInTouch.Intent": () => {
+    this.tell({ text: "How about talking about this over a coffee or something" });
+
+    this.ask([{ text: "Yep", intent: "YesIntent" }, { text: "Nah, I am good", state: "", intent: "QuitIntent" }],);
+  },
+  "YesIntent": () => {
+    this.tell({ text: "Pls tell describe in some short sentences what do you want to talk about?" });
+
+    this.ask([{ text: "", type: "text_input", id: "email_description", intent: "EmailDescriptionIntent" }]);
+  },
+  "EmailDescriptionIntent": () => {
+    this.tell({ text: "Cool, ok I just need your email so we can keep in touch" });
+
+    this.ask([{ text: "", type: "text_input", id: "email", intent: "Email" }])
+  },
+  "Email": () => {
+    const { emailIsValid } = this.state;
+
+    if (emailIsValid) {
+      this.tell({ text: "Great see you soon" });
+      this.ask([], { state: "", action: "Quit" });
+    } else {
+      this.tell({ text: "This email is not valid" });
+      this.tell({ text: "Let's try again" });
+      this.ask([{ text: "", type: "text_input", id: "email", intent: "Email" }])
+    }
+  },
+  "NoIntent": () => {
+    this.tell({ text: "Well good talk :), talk with you soon" });
+
+    this.ask([], { state: "", intent: "QuitIntent" });
+  },
+  "QuitIntent": () => {
+    this.quitChat();
+  }
+};
+
+class ChatEngine extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.bindHandlers(greetingStateHandler);
+    this.bindHandlers(getInTouchState);
+  }
+
+  bindHandlers = (stateHandler) => {
+    const { ask, tell, emit, quitChat, state } = this.props;
+    Object.key(stateHandler, (key) => {
+      stateHandler[key].state = state;
+      stateHandler[key].tell = tell;
+      stateHandler[key].ask = ask;
+      stateHandler[key].emit = emit;
+      stateHandler[key].quitChat = quitChat;
+    });
+  };
+
+  componentWillReceiveProps(nextProps, nextContext) {
+    if (nextProps.emailIsValid !== this.props.emailIsValid) {
+      this.bindHandlers(greetingStateHandler, getInTouchState);
+    }
+  }
+}
+
+const mapStateToProps = (state) => (  {
+  state: {
+    emailIsValid: validateEmail(state.email)
+  }
+});
+
+const mapDispatchToProps = {
+  tell: tellAction,
+  ask: askAction,
+  emit: emitAction,
+  quitChat: quitChatAction,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChatEngine);
