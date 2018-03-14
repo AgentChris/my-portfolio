@@ -1,21 +1,25 @@
-import React from 'react';
-import Message from './Message';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import Messages from './Messages';
+import ChatEngine from './ChatEngine';
+import { startChatAction } from "../../store/actions";
 
-const messages = [
-  { text: "hello there i am Chris", hero: false },
-  { text: "I hope your are doing well today", hero: false },
-  { text: "yeah i am fine", hero: true },
-  { text: "Are you excited about product development?", hero: false },
-  { text: "I hope so, together we might build epic stuff", hero: false },
-  { text: "Let's do this dwag", hero: true },
-];
+class Chat extends Component {
+  componentDidMount() {
+    this.props.startChat();
+  }
 
-const Chat = ({}) => (
-  <ul className="d-flex flex-column p-0">
-    {messages.map((message) => (
-      <Message {...message} />
-    ))}
-  </ul>
-);
+  render() {
+    return (
+      <div>
+        <Messages />
+        <ChatEngine />
+      </div>);
+  }
+}
 
-export default Chat;
+const mapDispatchToProps = {
+  startChat: startChatAction
+};
+
+export default connect(null, mapDispatchToProps)(Chat);
