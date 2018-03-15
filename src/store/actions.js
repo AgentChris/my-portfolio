@@ -1,7 +1,7 @@
 import ChatEngine from "../components/chat/ChatEngine";
 import {
   GREETING_STATE, CHANGE_CHAT_STATE, GET_IN_TOUCH_STATE, ADDING_MESSAGE_HERO, ADDING_MESSAGE,
-  ADDING_OPTION, ANSWER_OPTION_3, ANSWER_OPTION_4
+  ADDING_OPTION, ANSWER_OPTION_EMAIL_CONTENT, ANSWER_OPTION_EMAIL
 } from './index';
 
 const GreetIntent = "Greet.Intent";
@@ -43,21 +43,29 @@ export const askAction = (options, { state, intent } = {}) => {
 
 export const chooseOptionAction = (optionId, customText) => {
   return (dispatch, getState) => {
-    const { options } = getState();
+    let { options, chatState, intent } = getState().chat;
 
-    const { state, intent, ...remainingProps } = options.find(({ id }) => (id === optionId));
+    const option = options.find(({ id }) => (id === optionId));
 
-    let text = remainingProps.text;
-    if (optionId === "3") {
-      text = customText;
-      dispatch({ type: ANSWER_OPTION_3, text });
+    if (option.state) {
+      chatState = option.state;
     }
-    if (optionId === "4") {
+
+    if (option.intent) {
+      intent = option.intent;
+    }
+
+    let text = option.text;
+    if (optionId === "email") {
       text = customText;
-      dispatch({ type: ANSWER_OPTION_4, text });
+      dispatch({ type: ANSWER_OPTION_EMAIL_CONTENT, text });
+    }
+    if (optionId === "email_description") {
+      text = customText;
+      dispatch({ type: ANSWER_OPTION_EMAIL, text });
     }
 
     dispatch({ type: ADDING_MESSAGE_HERO, text });
-    dispatch({ type: CHANGE_CHAT_STATE, state, intent });
+    dispatch(emitAction(chatState, intent));
   };
 };

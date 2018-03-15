@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Messages from './Messages';
 import ChatEngine from './ChatEngine';
+import ChatInput from './ChatInput';
 import { startChatAction } from "../../store/actions";
 
 class Chat extends Component {
@@ -13,6 +14,7 @@ class Chat extends Component {
     return (
       <div>
         <Messages />
+        <ChatInput />
         <ChatEngine />
       </div>);
   }

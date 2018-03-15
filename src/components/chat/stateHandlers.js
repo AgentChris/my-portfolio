@@ -1,12 +1,13 @@
 // the alexa way
+import { GREETING_STATE, GET_IN_TOUCH_STATE } from '../../store';
 
 export const greetingStateHandler = {
   "Greet.Intent": function () {
     this.tell({ text: "I am Chris, web developer, based in the land of vampires Transilvania (in Cluj) [:spookey emoji]\n" })
     this.tell({ text: "Wanna simply get in Touch or Are You curios to find more?" });
 
-    this.ask([{ text: "Tell me more", state: "greetingState", intent: "TellMeMore.Intent" },
-      { text: "Get in Thouch", state: "getInTouchState", intent: "GetInTouch.Intent" }]);
+    this.ask([{ text: "Tell me more", state: GREETING_STATE, intent: "TellMeMore.Intent", id: "1" },
+      { text: "Get in Thouch", state: GET_IN_TOUCH_STATE, intent: "GetInTouch.Intent", id: "2" }]);
   },
   "TellMeMore.Intent": function () {
     this.tell({ text: "Great, Well were should i start :thinkingface" });
@@ -17,8 +18,10 @@ export const greetingStateHandler = {
 
     this.ask([{
       text: "What do you guys do more specifically for Nat" +
-      "geo"
-    }], { intent: "MoreDetail.Intent" });
+      "geo",
+      id: "3",
+      intent: "MoreDetail.Intent",
+    }]);
   },
   "MoreDetail.Intent": function () {
     this.tell({
@@ -27,8 +30,9 @@ export const greetingStateHandler = {
     });
     this.ask([{
       text: " Hmm interesting, I am curios to see what did you do for them?",
-      state: "getInTouchState",
-      intent: "GetInTouch.Intent"
+      state: GET_IN_TOUCH_STATE,
+      intent: "GetInTouch.Intent",
+      id: "4"
     }]);
   }
 };
@@ -37,7 +41,12 @@ export const getInTouchState = {
   "GetInTouch.Intent": function () {
     this.tell({ text: "How about talking about this over a coffee or something" });
 
-    this.ask([{ text: "Yep", intent: "YesIntent" }, { text: "Nah, I am good", state: "", intent: "QuitIntent" }],);
+    this.ask([{ text: "Yep", intent: "YesIntent", id: "5" }, {
+      text: "Nah, I am good",
+      state: "",
+      intent: "QuitIntent",
+      id: "6"
+    }],);
   },
   "YesIntent": function () {
     this.tell({ text: "Pls tell describe in some short sentences what do you want to talk about?" });
