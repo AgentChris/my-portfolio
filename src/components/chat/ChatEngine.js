@@ -22,6 +22,10 @@ class ChatEngine extends Component {
     this.bindHandlers(getInTouchState);
   }
 
+  updateState = (stateHandler, state) => {
+    stateHandler.state = state;
+  };
+
   bindHandlers = (stateHandler) => {
     const { ask, tell, emit, quitChat, state } = this.props;
 
@@ -41,8 +45,8 @@ class ChatEngine extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.emailIsValid !== this.props.emailIsValid) {
-      this.bindHandlers(greetingStateHandler, getInTouchState);
+    if (nextProps.state.emailIsValid !== this.props.state.emailIsValid) {
+      this.updateState(getInTouchState, nextProps.state);
     }
   }
 
@@ -53,7 +57,7 @@ class ChatEngine extends Component {
 
 const mapStateToProps = (state) => (  {
   state: {
-    emailIsValid: validateEmail(state.email)
+    emailIsValid: validateEmail(state.chat.email)
   }
 });
 

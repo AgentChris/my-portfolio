@@ -10,12 +10,12 @@ export const quitChatAction = () => {
   // close all options to choose, and input chat
 };
 
-export const emitAction = (state, intent) => (dispatch) => {
+export const emitAction = (chatState, intent) => (dispatch) => {
   //   redux cheage current state, call intent callback
-  dispatch({ type: CHANGE_CHAT_STATE, state, intent });
-  if (state === GREETING_STATE) {
+  dispatch({ type: CHANGE_CHAT_STATE, chatState, intent });
+  if (chatState === GREETING_STATE) {
     ChatEngine.handleGreetingState(intent)
-  } else if (state === GET_IN_TOUCH_STATE) {
+  } else if (chatState === "GET_IN_TOUCH_STATE") {
     ChatEngine.handleGetInTouchState(intent)
   }
 };
@@ -33,11 +33,10 @@ export const tellAction = ({ text }) => {
   }
 };
 
-export const askAction = (options, { state, intent } = {}) => {
+export const askAction = (options) => {
   // adding options to redux state
   return (dispatch) => {
     dispatch({ type: ADDING_OPTION, options });
-    dispatch(emitAction(state, intent));
   };
 };
 
@@ -58,11 +57,11 @@ export const chooseOptionAction = (optionId, customText) => {
     let text = option.text;
     if (optionId === "email") {
       text = customText;
-      dispatch({ type: ANSWER_OPTION_EMAIL_CONTENT, text });
+      dispatch({ type: ANSWER_OPTION_EMAIL, text });
     }
     if (optionId === "email_description") {
       text = customText;
-      dispatch({ type: ANSWER_OPTION_EMAIL, text });
+      dispatch({ type: ANSWER_OPTION_EMAIL_CONTENT, text });
     }
 
     dispatch({ type: ADDING_MESSAGE_HERO, text });
