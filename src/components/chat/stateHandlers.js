@@ -2,16 +2,17 @@
 import { GREETING_STATE, GET_IN_TOUCH_STATE } from '../../store';
 
 export const greetingStateHandler = {
-  "Greet.Intent": function () {
-    this.tell({ text: "I am Chris, web developer, based in the land of vampires Transilvania (in Cluj) [:spookey emoji]\n" })
-    this.tell({ text: "Wanna simply get in Touch or Are You curios to find more?" });
+  "Greet.Intent": async function () {
+
+    await this.tell({ text: "I am Chris, web developer, based in the land of vampires Transilvania (in Cluj) [:spookey emoji]\n" });
+    await this.tell({ text: "Wanna simply get in Touch or Are You curios to find more?" });
 
     this.ask([{ text: "Tell me more", state: GREETING_STATE, intent: "TellMeMore.Intent", id: "1" },
       { text: "Get in Thouch", state: GET_IN_TOUCH_STATE, intent: "GetInTouch.Intent", id: "2" }]);
   },
-  "TellMeMore.Intent": function () {
-    this.tell({ text: "Great, Well were should i start :thinkingface" });
-    this.tell({
+  "TellMeMore.Intent": async function () {
+    await this.tell({ text: "Great, Well were should i start :thinkingface" });
+    await this.tell({
       text: "I am over enthusiastic programmer, lucky enough to\n" +
       "work a great team in Transylvania for National Geographic"
     });
@@ -23,7 +24,7 @@ export const greetingStateHandler = {
       intent: "MoreDetail.Intent",
     }]);
   },
-  "MoreDetail.Intent": function () {
+  "MoreDetail.Intent": async function () {
     this.tell({
       text: "We are building all kinds off product using the technologies like three.js, react, uikit, actually\n" +
       "we just released a tapeline website were you can see NatGeo history (link de la timeline)\n"
@@ -38,7 +39,7 @@ export const greetingStateHandler = {
 };
 
 export const getInTouchState = {
-  "GetInTouch.Intent": function () {
+  "GetInTouch.Intent": async function () {
     this.tell({ text: "How about talking about this over a coffee or something" });
 
     this.ask([{ text: "Yep", intent: "YesIntent", id: "5" }, {
@@ -47,8 +48,8 @@ export const getInTouchState = {
       id: "6"
     }],);
   },
-  "YesIntent": function () {
-    this.tell({ text: "Pls tell describe in some short sentences what do you want to talk about?" });
+  "YesIntent": async function () {
+    await this.tell({ text: "Pls tell describe in some short sentences what do you want to talk about?" });
 
     this.ask([{
       text: "", displayProps: {
@@ -56,8 +57,8 @@ export const getInTouchState = {
       }, type: "text_input", id: "email_description", intent: "EmailDescriptionIntent"
     }]);
   },
-  "EmailDescriptionIntent": function () {
-    this.tell({ text: "Cool, ok I just need your email so we can keep in touch" });
+  "EmailDescriptionIntent": async function () {
+    await this.tell({ text: "Cool, ok I just need your email so we can keep in touch" });
 
     this.ask([{
       text: "", displayProps: {
@@ -65,24 +66,24 @@ export const getInTouchState = {
       }, type: "text_input", id: "email", intent: "Email"
     }])
   },
-  "Email": function () {
+  "Email": async function () {
     const { emailIsValid } = this.state;
 
     if (emailIsValid) {
-      this.tell({ text: "Great see you soon" });
+      await this.tell({ text: "Great see you soon" });
       this.ask([], { state: "", action: "Quit" });
     } else {
-      this.tell({ text: "This email is not valid" });
-      this.tell({ text: "Let's try again" });
+      await this.tell({ text: "This email is not valid" });
+      await this.tell({ text: "Let's try again" });
       this.ask([{ text: "", type: "text_input", id: "email", intent: "Email" }])
     }
   },
-  "NoIntent": function () {
-    this.tell({ text: "Well good talk :), talk with you soon" });
+  "NoIntent": async function () {
+    await this.tell({ text: "Well good talk :), talk with you soon" });
 
     this.ask([], { state: "", intent: "QuitIntent" });
   },
-  "QuitIntent": function () {
+  "QuitIntent": async function () {
     this.quitChat();
   }
 };

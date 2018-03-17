@@ -52,6 +52,7 @@ const updateState = (stateHandler, state) => {
 const mapStateToProps = (state) => {
   const emailIsValid = validateEmail(state.chat.email);
   updateState(getInTouchState, { emailIsValid });
+  return state;
 };
 
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
 import PropTypes from "proptypes";
 import { connect } from 'react-redux';
 import { chooseOptionAction } from "../../store/actions";
@@ -32,14 +33,18 @@ class ChatInput extends Component {
   };
 
   render() {
-    const { options, chooseOption } = this.props;
+    const { options, chooseOption, isTyping } = this.props;
     const { input_text } = this.state;
+    const optionClassName = classnames({
+      "col text-center message hero p-2 max": true,
+      "d-none": isTyping,
+    });
     return (
       <div className="container">
         <div className="row justify-content-center">
           {options.map(({ text, type, id, displayProps }, index) => {
             return (
-              <div key={index} className="col text-center message hero p-2 max">
+              <div key={index} className={optionClassName}>
                 {type === type_input ?
                   <input
                     {...displayProps}
@@ -65,6 +70,7 @@ class ChatInput extends Component {
 
 const mapStateToProps = (state) => ({
   options: state.chat.options || [],
+  isTyping: state.chat.isTyping,
 });
 
 const mapDispatchToProps = {

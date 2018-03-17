@@ -5,6 +5,8 @@ import {
 } from './index';
 
 const GreetIntent = "Greet.Intent";
+const WORD_PER_MINUTE = 60;
+const MINUTE = "6000"; // 60000 milliseconds
 
 export const quitChatAction = () => {
   // close all options to choose, and input chat
@@ -29,10 +31,16 @@ export const startChatAction = () => {
 export const tellAction = ({ text }) => {
   // adding meesages to redux state
   return (dispatch) => {
+    const words = text.split(" ");
+
+    const timeToWrite = (words.length / WORD_PER_MINUTE) * MINUTE;
     dispatch({ type: START_TYPING });
-    setTimeout(() => {
-      dispatch({ type: ADDING_MESSAGE, text, isTyping: false });
-    }, 2000);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        dispatch({ type: ADDING_MESSAGE, text, isTyping: false });
+        resolve(text);
+      }, timeToWrite);
+    });
   }
 };
 

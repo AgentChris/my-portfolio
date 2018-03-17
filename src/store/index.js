@@ -11,13 +11,6 @@ export const ANSWER_OPTION_EMAIL_CONTENT = "ANSWER_OPTION_EMAIL_CONTENT";
 export const ANSWER_OPTION_EMAIL = "ANSWER_OPTION_EMAIL";
 export const CHANGE_CHAT_STATE = "CHANGE_CHAT_STATE";
 
-// const emitAction = (newState, intent) => {
-//   // redux cheage current state, call intent callback
-//   if (!newState) {
-//     // just call intent callback
-//   }
-// };
-
 
 export const reducer = (state = { messages: [], chatState: GREETING_STATE, isTyping: true }, action) => {
   switch (action.type) {
