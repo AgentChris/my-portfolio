@@ -43,8 +43,7 @@ export const getInTouchState = {
 
     this.ask([{ text: "Yep", intent: "YesIntent", id: "5" }, {
       text: "Nah, I am good",
-      state: "",
-      intent: "QuitIntent",
+      intent: "NoIntent",
       id: "6"
     }],);
   },

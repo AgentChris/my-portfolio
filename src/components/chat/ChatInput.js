@@ -39,7 +39,7 @@ class ChatInput extends Component {
         <ul>
           {options.map(({ text, type, id }, index) => {
             return (
-              <div>
+              <div key={index}>
                 {type === type_input ?
                   <div>
                     <input type="text" onChange={this.handleInputText} onKeyPress={(evt) => {

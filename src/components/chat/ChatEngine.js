@@ -22,10 +22,6 @@ class ChatEngine extends Component {
     this.bindHandlers(getInTouchState);
   }
 
-  updateState = (stateHandler, state) => {
-    stateHandler.state = state;
-  };
-
   bindHandlers = (stateHandler) => {
     const { ask, tell, emit, quitChat, state } = this.props;
 
@@ -44,22 +40,20 @@ class ChatEngine extends Component {
     getInTouchState[intent]();
   };
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.state.emailIsValid !== this.props.state.emailIsValid) {
-      this.updateState(getInTouchState, nextProps.state);
-    }
-  }
-
   render() {
     return null;
   }
 }
 
-const mapStateToProps = (state) => (  {
-  state: {
-    emailIsValid: validateEmail(state.chat.email)
-  }
-});
+const updateState = (stateHandler, state) => {
+  stateHandler.state = state;
+};
+
+const mapStateToProps = (state) => {
+  const emailIsValid = validateEmail(state.chat.email);
+  updateState(getInTouchState, { emailIsValid });
+};
+
 
 const mapDispatchToProps = {
   tell: actions.tellAction,
