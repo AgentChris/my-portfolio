@@ -21,4 +21,7 @@ Build these ui interaction dialogs (flows):
 - [ ] Ask about their field of expertise and if they have some question, I can recommend some articles that i've find meaningfully or i've wrote (the proffered way)
 - [ ] Ask about personal development subjects like books, anime, tarzan charcther,tv series(picky blinder, khalisey and whatever) personalities videos that inspire you, other hobbies like skying, league of legends, beautiful ui interface and art
 
+Basic diagram
+
+[basic-logic]: img/basic-logic.png
 
