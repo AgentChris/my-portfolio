@@ -1,0 +1,11 @@
+@import "variabiles";
+
+.chat-input {
+  &:focus{
+    outline: none;
+  }
+  color: $isabelline-color;
+  border: none 0;
+  width: 100%;
+  background: $outer-space-color;
+}

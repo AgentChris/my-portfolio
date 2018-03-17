@@ -50,12 +50,20 @@ export const getInTouchState = {
   "YesIntent": function () {
     this.tell({ text: "Pls tell describe in some short sentences what do you want to talk about?" });
 
-    this.ask([{ text: "", type: "text_input", id: "email_description", intent: "EmailDescriptionIntent" }]);
+    this.ask([{
+      text: "", displayProps: {
+        placeholder: "Write some words"
+      }, type: "text_input", id: "email_description", intent: "EmailDescriptionIntent"
+    }]);
   },
   "EmailDescriptionIntent": function () {
     this.tell({ text: "Cool, ok I just need your email so we can keep in touch" });
 
-    this.ask([{ text: "", type: "text_input", id: "email", intent: "Email" }])
+    this.ask([{
+      text: "", displayProps: {
+        placeholder: "your email"
+      }, type: "text_input", id: "email", intent: "Email"
+    }])
   },
   "Email": function () {
     const { emailIsValid } = this.state;

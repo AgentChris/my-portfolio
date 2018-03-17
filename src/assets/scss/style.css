@@ -3437,6 +3437,14 @@ mark,
   color: #fff;
   background-color: #424B54; }
 
+.chat-input {
+  color: #EEEEEE;
+  border: none 0;
+  width: 100%;
+  background: #424B54; }
+  .chat-input:focus {
+    outline: none; }
+
 #root {
   background: #fff; }
 

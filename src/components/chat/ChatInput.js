@@ -35,17 +35,21 @@ class ChatInput extends Component {
     const { options, chooseOption } = this.props;
     const { input_text } = this.state;
     return (
-      <div>
-        <ul>
-          {options.map(({ text, type, id }, index) => {
+      <div className="container">
+        <div className="row justify-content-center">
+          {options.map(({ text, type, id, displayProps }, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="col text-center message hero p-2 max">
                 {type === type_input ?
-                  <div>
-                    <input type="text" onChange={this.handleInputText} onKeyPress={(evt) => {
+                  <input
+                    {...displayProps}
+                    type="text" className="chat-input pr-3 pl-3"
+                    onChange={this.handleInputText}
+                    onKeyPress={(evt) => {
                       this.handleKeyPress(evt, id);
-                    }} value={input_text} />
-                  </div> :
+                    }} value={input_text}
+                  />
+                  :
                   <div onClick={() => {
                     chooseOption(id, text);
                   }}>{text}</div>
@@ -53,7 +57,7 @@ class ChatInput extends Component {
               </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     );
   }
