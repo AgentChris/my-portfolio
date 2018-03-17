@@ -1,7 +1,7 @@
 import ChatEngine from "../components/chat/ChatEngine";
 import {
   GREETING_STATE, CHANGE_CHAT_STATE, GET_IN_TOUCH_STATE, ADDING_MESSAGE_HERO, ADDING_MESSAGE,
-  ADDING_OPTION, ANSWER_OPTION_EMAIL_CONTENT, ANSWER_OPTION_EMAIL
+  ADDING_OPTION, ANSWER_OPTION_EMAIL_CONTENT, ANSWER_OPTION_EMAIL, START_TYPING
 } from './index';
 
 const GreetIntent = "Greet.Intent";
@@ -29,7 +29,10 @@ export const startChatAction = () => {
 export const tellAction = ({ text }) => {
   // adding meesages to redux state
   return (dispatch) => {
-    dispatch({ type: ADDING_MESSAGE, text });
+    dispatch({ type: START_TYPING });
+    setTimeout(() => {
+      dispatch({ type: ADDING_MESSAGE, text, isTyping: false });
+    }, 2000);
   }
 };
 
