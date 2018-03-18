@@ -15,7 +15,6 @@ export class Api {
   getProfileInfo() {
     const params = { rss_url: PROFILE_RSS_FEED_ENDPOINT };
     return this.request.get('', { params });
-    // return this.request.get('?rss_url=https%3A%2F%2Fmedium.jasonmdesign.com%2Ffeed');
   }
 }
 
