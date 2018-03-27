@@ -14,11 +14,10 @@
 //@import "../../../node_modules/bootstrap/scss/code";
 @import "../../../node_modules/bootstrap/scss/grid";
 //@import "../../../node_modules/bootstrap/scss/buttons";
-
 @import "message";
 @import "chatInput";
 
-#root{
+#root {
   background: #fff;
 }
 
@@ -32,10 +31,23 @@
   border-radius: 50%;
 }
 
-@include media-breakpoint-down(xs) {
+.article-img {
+  object-fit: cover;
+}
+
+@include media-breakpoint-up(md) {
+  .article-img {
+    max-width: 300px;
+  }
+}
+
+@include media-breakpoint-down(sm) {
   .image-me {
     width: 80vw;
     height: 80vw;
+  }
+  .article-img {
+    width: 100%;
   }
 }
 
@@ -64,7 +76,7 @@
   height: 26px;
 }
 
-.stacks{
+.stacks {
   max-width: 450px;
 }
 
@@ -81,7 +93,7 @@
   }
 }
 
-.qc-icon{
+.qc-icon {
   display: inline-block;
   width: 125px;
   height: 24px;
@@ -96,20 +108,24 @@
   background: url('../img/react.png');
   background-size: cover;
 }
+
 .python-icon {
   background: url('../img/python.png');
   background-size: cover;
 }
+
 .django-icon {
   width: 100px;
   height: 29px;
   background: url('../img/django.png');
   background-size: cover;
 }
+
 .typescript-icon {
   background: url('../img/typescript.png');
   background-size: cover;
 }
+
 .js-icon {
   background: url('../img/js.jpg');
   background-size: cover;

@@ -1,6 +1,8 @@
 // the alexa way
 import { GREETING_STATE, GET_IN_TOUCH_STATE } from '../../store';
 
+
+
 export const greetingStateHandler = {
   "Greet.Intent": async function () {
 

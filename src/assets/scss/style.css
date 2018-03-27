@@ -3457,10 +3457,19 @@ mark,
   margin-left: auto;
   border-radius: 50%; }
 
-@media (max-width: 575.98px) {
+.article-img {
+  object-fit: cover; }
+
+@media (min-width: 768px) {
+  .article-img {
+    max-width: 300px; } }
+@media (max-width: 767.98px) {
   .image-me {
     width: 80vw;
-    height: 80vw; } }
+    height: 80vw; }
+
+  .article-img {
+    width: 100%; } }
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .image-me {
     width: 200px;

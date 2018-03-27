@@ -28,11 +28,6 @@ class Articles extends Component {
             ...remainingProps,
           };
         });
-
-
-        // TODO: these items should be removed
-        articles = articles.filter(({ guid }) => (guid !== "https://medium.com/p/7df9927422ef" && guid !== "https://medium.com/p/2752591fd32d"));
-
         this.setState({ articles: articles.slice(0, GET_NR_ARTICLES - 1) });
       }
     });
@@ -41,11 +36,19 @@ class Articles extends Component {
   render() {
     const { articles } = this.state;
     return (
-      <div>
-        {articles.map(({ title, description }) => (
-          <div>
-            <h4>{title}</h4>
-            <p>{description}</p>
+      <div className="container p-0 mt-4">
+        <h2>Latest articles</h2>
+        {articles.map(({ title, description, link, thumbnail }) => (
+          <div className="row mb-4">
+            <div className="col-sm-12 article-img col-md">
+              <a href={link}><img src={thumbnail} className="article-img" /></a>
+            </div>
+            <div className="col-sm-12 col-md ml-md-3">
+              <a href={link}>
+                <h4>{title}</h4>
+              </a>
+              <p>{description}</p>
+            </div>
           </div>
         ))}
       </div>
