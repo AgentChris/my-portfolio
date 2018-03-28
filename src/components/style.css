@@ -1,0 +1,18 @@
+.form-control {
+  margin: 0 auto 0 auto;
+  max-width: 400px;
+}
+
+.btn-submit {
+  max-width: 200px;
+  margin: 0 auto 0 auto;
+}
+
+.article-section-title {
+  line-height: 3em;
+}
+
+.text-area {
+  height: 125px;
+  resize: none;
+}

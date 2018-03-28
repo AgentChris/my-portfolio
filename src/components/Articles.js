@@ -37,7 +37,7 @@ class Articles extends Component {
     const { articles } = this.state;
     return (
       <div className="container p-0 mt-4">
-        <h2>Latest articles</h2>
+        <h2 className="article-section-title">Latest articles</h2>
         {articles.map(({ title, description, link, thumbnail }) => (
           <div className="row mb-4">
             <div className="col-sm-12 article-img col-md">

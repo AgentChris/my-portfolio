@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AboutMe = ({}) => (
-  <div className="row align-items-center about-me">
+  <div className="row align-items-center m-0 about-me">
     <div className="col-sm-12 col-md-4">
       <div className="d-flex justify-content-center image-me" />
     </div>
