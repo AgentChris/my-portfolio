@@ -4145,6 +4145,14 @@ input[type="button"].btn-block {
   animation: fade-in 1s;
   margin: 1em;
   border-radius: 1em; }
+  .message .em {
+    top: -4px;
+    position: relative;
+    height: 1.4em;
+    width: 1.4em; }
+  .message a {
+    text-decoration: underline;
+    text-decoration-color: #fc0; }
 
 @keyframes fade-in {
   from {
@@ -4187,6 +4195,8 @@ input[type="button"].btn-block {
   background-size: cover;
   width: 350px;
   height: 350px;
+  max-width: 450px;
+  max-height: 450px;
   margin-right: auto;
   margin-left: auto;
   border-radius: 50%; }

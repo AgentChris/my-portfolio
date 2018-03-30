@@ -2,7 +2,7 @@ import React from 'react';
 
 const MessageComponent = ({ text, hero }) => (
   <li className={"message " + (hero ? "hero" : "")}>
-    <p>{text}</p>
+    <p dangerouslySetInnerHTML={{ __html: `${text}` }} />
   </li>
 );
 

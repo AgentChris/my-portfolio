@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from "react-redux";
 import { routerMiddleware } from 'react-router-redux';
+import "./assets/scss/emoji.css";
 
 import createHistory from 'history/createBrowserHistory';
 
