@@ -7,7 +7,11 @@ const Messages = ({ messages = [], isTyping }) => (
     {messages.map((message, index) => (
       <Message {...message} key={index} />
     ))}
-    {isTyping ? <Message text={"..."} /> : null}
+    {isTyping ? <div className="message">
+      <div className="circle"/>
+      <div className="circle"/>
+      <div className="circle"/>
+    </div> : null}
   </ul>
 );
 

@@ -4157,6 +4157,20 @@ input[type="button"].btn-block {
   color: #fff;
   background-color: #424B54; }
 
+.circle {
+  display: inline-block;
+  background: #bcbcbc;
+  margin: 2px;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  animation: writing-animation .7s infinite; }
+
+@keyframes writing-animation {
+  0% {
+    opacity: .5; }
+  100% {
+    opacity: 1; } }
 .chat-input {
   color: #EEEEEE;
   border: none 0;
