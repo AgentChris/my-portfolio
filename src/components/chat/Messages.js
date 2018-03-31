@@ -3,14 +3,6 @@ import { connect } from 'react-redux';
 import Message from './Message';
 
 class Messages extends Component {
-  node = null;
-
-  componentDidUpdate(prevProps, prevState, prevContext) {
-    if (this.node) {
-      this.node.scrollIntoView(false);
-    }
-  }
-
   render() {
     const { messages = [], isTyping } = this.props;
     return (
@@ -24,9 +16,6 @@ class Messages extends Component {
             <div className="circle" />
             <div className="circle" />
           </div> : null}
-        <div className="message-scroll" ref={(node) => {
-          this.node = node
-        }} />
       </ul>
     );
   }

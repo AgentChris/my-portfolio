@@ -28,11 +28,9 @@
 
 .message-scroll {
   position: relative;
-  top: 100px;
 }
 
 .last-message {
-  top: 600px;
   position: relative;
 }
 

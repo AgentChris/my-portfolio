@@ -38,8 +38,8 @@ class Articles extends Component {
     return (
       <div className="container p-0 mt-4">
         <h2 className="article-section-title">Latest articles</h2>
-        {articles.map(({ title, description, link, thumbnail }) => (
-          <div className="row mb-4">
+        {articles.map(({ title, description, link, thumbnail }, index) => (
+          <div className="row mb-4" key={index}>
             <div className="col-sm-12 article-img col-md">
               <a href={link}><img src={thumbnail} className="article-img" /></a>
             </div>

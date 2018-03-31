@@ -6,6 +6,14 @@ import ChatInput from './ChatInput';
 import { startChatAction } from "../../store/actions";
 
 class Chat extends Component {
+  node = null;
+
+  componentDidUpdate(prevProps, prevState, prevContext) {
+    if (this.node) {
+      this.node.scrollIntoView(false);
+    }
+  }
+
   componentDidMount() {
     this.props.startChat();
   }
@@ -16,6 +24,9 @@ class Chat extends Component {
         <Messages />
         <ChatInput />
         <ChatEngine />
+        <div className="message-scroll" ref={(node) => {
+          this.node = node
+        }} />
         <p className="info-scroll text-center">
           <span className="mr-4">&#8595;</span>
           Scroll if you don't feel like talking
@@ -25,8 +36,11 @@ class Chat extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  isTyping: state.chat.isTyping,
+});
 const mapDispatchToProps = {
   startChat: startChatAction
 };
 
-export default connect(null, mapDispatchToProps)(Chat);
+export default connect(mapStateToProps, mapDispatchToProps)(Chat);
