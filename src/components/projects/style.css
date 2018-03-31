@@ -8,6 +8,9 @@
     display: none; }
 
 .project-link, .project-link:hover {
+  -webkit-text-stroke-width: .01rem;
+  -webkit-text-stroke-color: black;
+  letter-spacing: 1px;
   text-decoration: none;
   color: #fff; }
 
@@ -15,6 +18,9 @@
   color: #fff; }
 
 .project-content:hover, .project-content:active {
+  -webkit-text-stroke-width: 0;
+  font-weight: normal;
+  letter-spacing: inherit;
   border-style: solid;
   border-width: 10px;
   transform: translate(-10px, -10px);
