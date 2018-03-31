@@ -1,3 +1,4 @@
+import Api from '../utils/Api';
 import ChatEngine from "../components/chat/ChatEngine";
 import {
   GREETING_STATE, CHANGE_CHAT_STATE, GET_IN_TOUCH_STATE, ADDING_MESSAGE_HERO, ADDING_MESSAGE,
@@ -53,7 +54,7 @@ export const askAction = (options) => {
 
 export const chooseOptionAction = (optionId, customText) => {
   return (dispatch, getState) => {
-    let { options, chatState, intent } = getState().chat;
+    let { options, chatState, intent, emailContent, email } = getState().chat;
 
     const option = options.find(({ id }) => (id === optionId));
 
@@ -68,6 +69,7 @@ export const chooseOptionAction = (optionId, customText) => {
     let text = option.text;
     if (optionId === "email") {
       text = customText;
+      Api.sendEmail({ email: text, message: emailContent });
       dispatch({ type: ANSWER_OPTION_EMAIL, text });
     }
     if (optionId === "email_description") {

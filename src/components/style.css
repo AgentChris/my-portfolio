@@ -17,6 +17,12 @@
   resize: none;
 }
 
+.confirmation-message {
+  height:55px;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
 .info-scroll {
   left: 0;
   right: 0;
