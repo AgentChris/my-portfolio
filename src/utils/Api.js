@@ -7,7 +7,7 @@ const SERVICE_ID = "gmail_protofolio";
 const TEMPLATE_ID = "portofolio_template";
 const PROFILE_RSS_FEED_ENDPOINT = "https://medium.com/feed/@poputeacristi";
 
-export class Api {
+class Api {
   constructor({ url, headers } = { url: '', headers: {} }) {
     this.request = axios.create({
       baseURL: url,
@@ -21,7 +21,7 @@ export class Api {
     return this.request.get('https://api.rss2json.com/v1/api.json', { params });
   }
 
-  static sendEmail(body) {
+  sendEmail(body) {
     return send(SERVICE_ID, TEMPLATE_ID, body, USER_ID);
   }
 }
