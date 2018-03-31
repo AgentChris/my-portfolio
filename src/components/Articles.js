@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Api from '../utils/Api';
 
-const MAX_DESCRIPTION_LENGTH = 120;
 const GET_NR_ARTICLES = 5;
 
 // only top 5 or 6 most read articles from medium
@@ -35,10 +34,10 @@ class Articles extends Component {
         <h2 className="article-section-title">Latest articles</h2>
         {articles.map(({ title, description, link, thumbnail }, index) => (
           <div className="row mb-4" key={index}>
-            <div className="col-sm-12 article-img col-md mb-sm-3">
+            <div className="col-sm-12 article-img col-md mb-3 mb-md-0">
               <a href={link}><img src={thumbnail} className="article-img" /></a>
             </div>
-            <div className="col-sm-12 col-md ml-md-3">
+            <div className="col-sm-12 col-md ml-md-3 pr-4">
               <a href={link}>
                 <h4>{title}</h4>
               </a>
