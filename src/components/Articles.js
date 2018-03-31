@@ -18,13 +18,8 @@ class Articles extends Component {
         const filteredArticles = items.filter(({ categories }) => (categories.length > 0));
 
         let articles = filteredArticles.map(({ description, ...remainingProps }) => {
-          let shortDescription = description.replace(/<\/?[^>]+(>|$)/g, "");
-
-          shortDescription = shortDescription.substr(0, MAX_DESCRIPTION_LENGTH);
-          shortDescription += "...";
-
           return {
-            description: shortDescription,
+            description:description.replace(/<\/?[^>]+(>|$)/g, ""),
             ...remainingProps,
           };
         });
@@ -40,14 +35,14 @@ class Articles extends Component {
         <h2 className="article-section-title">Latest articles</h2>
         {articles.map(({ title, description, link, thumbnail }, index) => (
           <div className="row mb-4" key={index}>
-            <div className="col-sm-12 article-img col-md">
+            <div className="col-sm-12 article-img col-md mb-sm-3">
               <a href={link}><img src={thumbnail} className="article-img" /></a>
             </div>
             <div className="col-sm-12 col-md ml-md-3">
               <a href={link}>
                 <h4>{title}</h4>
               </a>
-              <p>{description}</p>
+              <p className="block-with-text">{description}</p>
             </div>
           </div>
         ))}
