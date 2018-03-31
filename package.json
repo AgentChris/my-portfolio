@@ -13,6 +13,7 @@
     "react-redux": "^5.0.7",
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.17",
+    "react-scroll": "^1.7.7",
     "reactstrap": "^5.0.0-beta",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"

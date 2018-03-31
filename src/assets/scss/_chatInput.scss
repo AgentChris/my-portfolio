@@ -1,7 +1,11 @@
 @import "variabiles";
 
+.chat-container {
+  min-height: 100vh;
+}
+
 .chat-input {
-  &:focus{
+  &:focus {
     outline: none;
   }
   color: $isabelline-color;

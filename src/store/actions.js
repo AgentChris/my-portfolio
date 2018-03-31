@@ -5,7 +5,7 @@ import {
 } from './index';
 
 const GreetIntent = "Greet.Intent";
-const WORD_PER_MINUTE = 60;
+const WORD_PER_MINUTE = 80;
 const MINUTE = "6000"; // 60000 milliseconds
 
 export const quitChatAction = () => {

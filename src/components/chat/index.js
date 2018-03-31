@@ -12,11 +12,16 @@ class Chat extends Component {
 
   render() {
     return (
-      <div>
+      <div className="chat-container">
         <Messages />
         <ChatInput />
         <ChatEngine />
-      </div>);
+        <p className="info-scroll text-center">
+          <span className="mr-4">&#8595;</span>
+          Scroll if you don't feel like talking
+        </p>
+      </div>
+    );
   }
 }
 

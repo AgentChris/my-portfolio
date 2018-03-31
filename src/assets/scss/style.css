@@ -4179,6 +4179,9 @@ input[type="button"].btn-block {
     opacity: .5; }
   100% {
     opacity: 1; } }
+.chat-container {
+  min-height: 100vh; }
+
 .chat-input {
   color: #EEEEEE;
   border: none 0;
@@ -4279,6 +4282,7 @@ input[type="button"].btn-block {
   background-size: cover; }
 
 .about-me {
+  margin-top: 4rem;
   border: solid #EFF1F3 2px;
   padding: 15px 0 15px 0; }
 

@@ -16,3 +16,31 @@
   height: 125px;
   resize: none;
 }
+
+.info-scroll {
+  left: 0;
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  animation: fade-out 5s;
+}
+
+.message-scroll {
+  position: relative;
+  top: 100px;
+}
+
+.last-message {
+  top: 600px;
+  position: relative;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
