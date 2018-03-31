@@ -69,7 +69,7 @@ export const chooseOptionAction = (optionId, customText) => {
     let text = option.text;
     if (optionId === "email") {
       text = customText;
-      Api.sendEmail({ email: text, message: emailContent });
+      Api.sendEmail({ email: text, message: emailContent, subject: "message-from-chat" });
       dispatch({ type: ANSWER_OPTION_EMAIL, text });
     }
     if (optionId === "email_description") {
