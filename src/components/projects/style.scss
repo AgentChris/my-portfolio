@@ -69,8 +69,10 @@
 
 .project-2 {
   background: #72fffc;
-  border-color: #72fffc;
   color: #72fffc;
+  background: url("../../assets/img/carmel.png");
+  filter: grayscale(100%);
+  background-size: cover;
 }
 
 .project-3-background-color {

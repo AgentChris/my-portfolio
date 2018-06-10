@@ -12,9 +12,9 @@ export const projects = [{
   img_src: "www.imgur.com/1",
 }, {
   id: '3',
-  name: 'Project 3',
-  description: "A short description",
-  url: 'http://www.people-like-me.co/',
+  name: 'Carmel',
+  description: "Grow Your Tech Skills With Programming Challenges And Earn Experience Points",
+  url: 'https://carmel.io/team',
   img_src: "www.imgur.com/1",
 }, {
   id: '4',
