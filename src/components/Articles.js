@@ -39,7 +39,7 @@ class Articles extends Component {
               <a href={link} onClick={() => {
                 GA_OBJECT.event({
                   category: 'article',
-                  action: `click article ${url}`
+                  action: `click article ${link}`
                 });
               }}><img src={thumbnail} className="article-img" /></a>
             </div>
