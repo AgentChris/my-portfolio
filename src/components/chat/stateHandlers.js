@@ -1,5 +1,6 @@
 // the alexa way
 import { GREETING_STATE, GET_IN_TOUCH_STATE } from '../../store';
+import GA_OBJECT from "../../libs/GA";
 
 
 export const greetingStateHandler = {
@@ -18,6 +19,10 @@ export const greetingStateHandler = {
       "work a great team for National Geographic"
     });
 
+    GA_OBJECT.event({
+      category: 'chat',
+      action: 'tell me more'
+    });
     this.ask([{
       text: "What do you guys do more specifically for Nat" +
       "geo?",
@@ -73,6 +78,10 @@ export const getInTouchState = {
     if (emailIsValid) {
       await this.tell({ text: "Great see you soon <i class=\"em em-handshake\"></i>" });
       this.ask([], { state: "", action: "Quit" });
+      GA_OBJECT.event({
+        category: 'chat',
+        action: 'success email'
+      });
     } else {
       await this.tell({ text: "This email is not valid <i class=\"em em-face_with_monocle\"></i>" });
       await this.tell({ text: "Let's try again" });

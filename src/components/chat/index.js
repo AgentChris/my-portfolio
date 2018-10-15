@@ -4,6 +4,7 @@ import Messages from './Messages';
 import ChatEngine from './ChatEngine';
 import ChatInput from './ChatInput';
 import { startChatAction } from "../../store/actions";
+import GA_OBJECT from "../../libs/GA";
 
 class Chat extends Component {
   node = null;
@@ -16,6 +17,10 @@ class Chat extends Component {
 
   componentDidMount() {
     this.props.startChat();
+    GA_OBJECT.event({
+      category: 'chat',
+      action: 'start chat'
+    });
   }
 
   render() {

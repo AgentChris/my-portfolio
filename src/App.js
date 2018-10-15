@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Provider } from "react-redux";
 import { routerMiddleware } from 'react-router-redux';
-import "./assets/scss/emoji.css";
-
 import createHistory from 'history/createBrowserHistory';
 
+import GA_OBJECT from './libs/GA';
+import "./assets/scss/emoji.css";
 import { configureStore } from './configureStore';
 import './App.css';
 import Layout from './components/Layout';
@@ -24,6 +24,10 @@ const middleware = routerMiddleware(history);
 export const store = configureStore(middleware);
 
 class App extends Component {
+  componentDidMount() {
+    GA_OBJECT.pageview(window.location.pathname + window.location.search);
+  }
+
   render() {
     return (
       <Provider store={store}>
