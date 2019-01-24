@@ -54,22 +54,26 @@
   background-size: cover;
 }
 
+$project-1-color: #7694ff;
+
 .project-1-background-color {
-  background: #a3ffc7;
+  background: $project-1-color;
 }
 
 .project-1 {
-  border-color: #a3ffc7;
-  color: #a3ffc7;
+  border-color: $project-1-color;
+  color: $project-1-color;
 }
 
+$project-2-color: #b152ff;
+
 .project-2-background-color {
-  background: #72fffc;
+  background: $project-2-color;
 }
 
 .project-2 {
-  background: #72fffc;
-  color: #72fffc;
+  background: $project-2-color;
+  color: $project-2-color;
   background: url("../../assets/img/carmel.png");
   filter: grayscale(100%);
   background-size: cover;
