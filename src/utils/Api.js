@@ -3,7 +3,7 @@ import { send } from 'emailjs-com';
 
 const API_URL = "";
 const USER_ID = "user_0dqeMwI0Ek3faqX2uwCty";
-const SERVICE_ID = "gmail_protofolio";
+const SERVICE_ID = "gmail-portofolio";
 const TEMPLATE_ID = "portofolio_template";
 const PROFILE_RSS_FEED_ENDPOINT = "https://medium.com/feed/@poputeacristi";
 
