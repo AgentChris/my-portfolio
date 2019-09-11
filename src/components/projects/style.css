@@ -3,19 +3,24 @@
   min-height: 150px;
   justify-content: center;
   align-items: center;
-  transition: ease-out .2s; }
-  .project-content .message-description {
-    display: none; }
+  transition: ease-out .2s;
+}
+
+.project-content .message-description {
+  display: none;
+}
 
 .project-link, .project-link:hover {
   -webkit-text-stroke-width: .01rem;
   -webkit-text-stroke-color: black;
   letter-spacing: 1px;
   text-decoration: none;
-  color: #fff; }
+  color: #fff;
+}
 
 .project-link:hover {
-  color: #fff; }
+  color: #fff;
+}
 
 .project-content:hover, .project-content:active {
   -webkit-text-stroke-width: 0;
@@ -26,87 +31,112 @@
   transform: translate(-10px, -10px);
   position: relative;
   background: #fff;
-  filter: none; }
-  .project-content:hover .project-link, .project-content:active .project-link {
-    display: none; }
-  .project-content:hover .message-description, .project-content:active .message-description {
-    display: inherit; }
-  .project-content:hover .project-link, .project-content:active .project-link {
-    color: inherit; }
+  filter: none;
+}
+
+.project-content:hover .project-link, .project-content:active .project-link {
+  display: none;
+}
+
+.project-content:hover .message-description, .project-content:active .message-description {
+  display: inherit;
+}
+
+.project-content:hover .project-link, .project-content:active .project-link {
+  color: inherit;
+}
 
 .project-0-background-color {
-  background: cadetblue; }
+  background: cadetblue;
+}
 
 .project-0 {
   border-color: cadetblue;
   color: cadetblue;
-  background: url("../../assets/img/landscape_project.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url("../../assets/img/landscape_project.png");
   filter: grayscale(100%);
-  background-size: cover; }
+  background-size: cover;
+}
 
 .project-1-background-color {
-  background: #7694ff; }
+  background: #7694ff;
+}
 
 .project-1 {
   border-color: #7694ff;
-  color: #7694ff; }
+  color: #7694ff;
+}
 
 .project-2-background-color {
-  background: #b152ff; }
+  background: #b152ff;
+}
 
 .project-2 {
   background: #b152ff;
   color: #b152ff;
   background: url("../../assets/img/carmel.png");
   filter: grayscale(100%);
-  background-size: cover; }
+  background-size: cover;
+}
 
 .project-3-background-color {
-  background: #b152ff; }
+  background: #b152ff;
+}
 
 .project-3 {
   background: #b152ff;
   border-color: #b152ff;
-  color: #b152ff; }
+  color: #b152ff;
+}
 
 .project-4-background-color {
-  background: #ffcd28; }
+  background: #ffcd28;
+}
 
 .project-4 {
   background: #ffcd28;
   border-color: #ffcd28;
-  color: #ffcd28; }
+  color: #ffcd28;
+}
 
 .project-5-background-color {
-  background: #7694ff; }
+  background: #7694ff;
+}
 
 .project-5 {
   background: #7694ff;
   border-color: #7694ff;
-  color: #7694ff; }
+  color: #7694ff;
+}
 
 .project-6-background-color {
-  background: #ffa0a8; }
+  background: #ffa0a8;
+}
 
 .project-6 {
   background: #ffa0a8;
   border-color: #ffa0a8;
-  color: #ffa0a8; }
+  color: #ffa0a8;
+}
 
 .project-7-background-color {
-  background: red; }
+  background: red;
+}
 
 .project-7 {
   background: red;
   border-color: red;
-  color: red; }
+  color: red;
+}
 
 .project-8-background-color {
-  background: blanchedalmond; }
+  background: blanchedalmond;
+}
 
 .project-8 {
   background: blanchedalmond;
   border-color: blanchedalmond;
-  color: blanchedalmond; }
+  color: blanchedalmond;
+}
 
 /*# sourceMappingURL=style.css.map */
