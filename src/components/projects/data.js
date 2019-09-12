@@ -1,7 +1,7 @@
 export const projects = [{
   id: '1',
   name: 'Landscape Architecture Portfolio',
-  url: 'https://agentchris.github.io/landscape-arhitect-portofolio/#/',
+  url: 'https://madalinatripon.com',
   description: "Landscape Architecture Portfolio using three.js,webgl and lots of animations.",
   img_src: "https://trello-attachments.s3.amazonaws.com/5d5a6623b561498e086312d5/5d796927419efc67ceeb07c3/0983c966b530a22a7622fabbc8f2cf09/landscape_project.png",
 }, {
